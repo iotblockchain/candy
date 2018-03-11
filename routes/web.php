@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/captcha', 'CaptchaController@get');
+
+Route::get('/sms-code', 'SmsCodeController@send');
+
+Auth::routes();
+
+Route::get('/wallet', 'WalletController@index')->name('wallet');

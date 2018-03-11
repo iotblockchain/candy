@@ -5,10 +5,11 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "barryvdh/laravel-ide-helper": "^2.4",
         "php": ">=7.0.0",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "encore/laravel-admin": "^1.5",
         "fideloper/proxy": "~3.3",
+        "gregwar/captcha": "^1.1",
         "laravel-admin-ext/helpers": "^1.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0"
