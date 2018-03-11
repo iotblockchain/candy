@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('from')->nullable();
             $table->string('address', 40)->nullable();
             $table->string('key', 64)->nullable();
+            $table->unsignedInteger('bonus')->default(0);
             $table->timestamps();
 
             $table->index('from');
