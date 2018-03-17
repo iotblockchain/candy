@@ -64,9 +64,11 @@ class SmsCodeController extends Controller
 
             $user->key = $key;
             $user->address = $address;
+            $user->bonus = $user->should_send_bonus = 100;
 
             $from_user = User::find($u);
             if ($from_user) {
+                $from_user->updateBonus();
                 $user->from = $from_user->id;
             }
         }

@@ -24,10 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $invite_count = User::query()->where('from', auth()->id())->count();
+        $user = auth()->user();
 
         return view('home', [
-            'invite_count' => $invite_count,
+            'url' => url('/login?u=').$user->id,
+            'invite_count' => $user->invitee->count(),
+            'level' => $user->vip,
+            'bonus' => $user->bonus,
+            'sent_bonus' => $user->sent_bonus,
         ]);
     }
 }
