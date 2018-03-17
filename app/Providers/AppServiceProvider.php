@@ -24,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(\App\AliSms::class, function () {
+            return new \App\AliSms(env('ALI_SMS_KEY'), env('ALI_SMS_SECRET'));
+        });
     }
 }
