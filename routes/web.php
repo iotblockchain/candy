@@ -26,3 +26,4 @@ Route::get('/sms-code', 'SmsCodeController@send');
 Auth::routes();
 
 Route::get('/wallet', 'WalletController@index')->name('wallet');
+Route::post('/wallet', 'WalletController@updateAddress');
