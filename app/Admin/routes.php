@@ -12,5 +12,5 @@ Route::group([
 
     $router->get('/', 'HomeController@index');
     $router->resource('users', UserController::class);
-
+    $router->post('/users/send_bonus', UserController::class.'@sendBonus');
 });

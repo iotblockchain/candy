@@ -10,6 +10,7 @@ use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -86,17 +87,21 @@ class UserController extends Controller
                 return '<select>'.join("\n", $lines).'</select> 共 '.count($users).' 个';
             });
 
-            $grid->bonus('已发奖励');
+            $grid->vip('用户等级')->sortable();
+            $grid->bonus('总奖励');
+            $grid->sent_bonus('已发奖励');
+            $grid->should_send_bonus('应发奖励')->sortable()->display(function ($bonus) {
+                if ($bonus) {
+                    $form = '<form method="POST" action="/admin/users/send_bonus">'.csrf_field().'<input type="hidden" name="uid" value="'.$this->id.'">';
+                    return $form."<button type=\"submit\" class=\"btn btn-danger\">$bonus</button></form>";
+                }
 
-            $grid->level('用户等级')->display(function () {
-                return count($this->invitee);
+                return $bonus;
             });
-            $grid->column('应发奖励')->display(function () {
-                return 1;
+
+            $grid->created_at('注册日期')->display(function () {
+                return $this->created_at->format('Y-m-d');
             });
-
-
-            $grid->created_at('注册时间');
         });
 
         $grid->disableCreation();
@@ -126,5 +131,19 @@ class UserController extends Controller
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
         });
+    }
+
+    public function sendBonus(Request $request)
+    {
+        $uid = $request->input('uid');
+
+        $user = User::find($uid);
+
+        if ($user) {
+            $user->sent_bonus = $user->bonus;
+            $user->updateBonus();
+        }
+
+        return back();
     }
 }

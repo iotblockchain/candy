@@ -36,7 +36,7 @@ class User extends Authenticatable
     {
         $count = $this->invitee()->count();
 
-        $vip = $this->vip($count);
+        $vip = $this->calcVip($count);
 
         $bonus = $this->calcBonus($count, $vip);
 
@@ -77,7 +77,7 @@ class User extends Authenticatable
         return $bonus;
     }
 
-    public function vip(int $count): int
+    public function calcVip(int $count): int
     {
         if ($count <= 0) {
             return 0;
