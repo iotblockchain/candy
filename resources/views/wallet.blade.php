@@ -10,14 +10,6 @@
                     <input onfocus="this.select()" readonly value="0x{{ Auth::user()->address }}" style="width:100%;">
                 </div>
             </div>
-            @if (Auth::user()->key)
-            <div class="panel panel-default">
-                <div class="panel-heading">钱包私钥</div>
-                <div class="panel-body">
-                    <input onfocus="this.select()" readonly value="0x{{ Auth::user()->key }}" style="width:100%;">
-                </div>
-            </div>
-            @endif
             <div class="panel panel-default">
                 <div class="panel-heading">绑定钱包</div>
                 <div class="panel-body">

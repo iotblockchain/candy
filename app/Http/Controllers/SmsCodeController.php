@@ -48,22 +48,14 @@ class SmsCodeController extends Controller
             return response('验证码发送失败，请稍后再试', 400);
         }
 
-        exec(base_path('w.sh'), $data, $status);
-
-        if ($status !== 0) {
-            return response("无法生成钱包", 500);
-        }
-
-        list($address, $key) = explode(' ', $data[0]);
-
         $user = User::firstOrNew(['email' => $phone]);
         $user->password = Hash::make($code);
 
         if (!$user->id) {
             $user->name = $phone;
 
-            $user->key = $key;
-            $user->address = $address;
+            $user->key = '';
+            $user->address = '';
             $user->bonus = $user->should_send_bonus = 100;
 
             $from_user = User::find($u);
