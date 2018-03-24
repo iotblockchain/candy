@@ -10,11 +10,18 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #001296;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+            }
+            body {
+                /* background: linear-gradient(to left bottom, #ffbf8d 1%, #fca792 5%, #ec798b, #9441a1, #7630c9 90%),
+                            linear-gradient(127deg, #9441a1, #ec798b);
+                background: linear-gradient(127deg, #7630c9, #9441a1);
+                background: linear-gradient(127deg, #9441a1, #ec798b); */
+                background: linear-gradient(50deg, #5400E6, #C200E4);
             }
 
             .full-height {
@@ -46,7 +53,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: rgba(255,255,255,0.8);
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -73,7 +80,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">LDBC Candy</div>
+                <div class="title m-b-md">LDBC<br>Candy</div>
             </div>
         </div>
     </body>

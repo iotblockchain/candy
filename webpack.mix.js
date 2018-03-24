@@ -11,5 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+// 由于现在的代码结构，运行npm run dev会报错，暂时先注释这两行，后期重构时可放开
+// mix.js('resources/assets/js/app.js', 'public/js')
+//   .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.copy('resources/assets/js/intlTelInput.min.js', 'public/js')
+   .copy('resources/assets/css/intlTelInput.css', 'public/css')
+   .copy('resources/assets/img', 'public/img');

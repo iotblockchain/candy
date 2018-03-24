@@ -12,10 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('style')
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top ldbc-nav">
             <div class="container">
                 <div class="navbar-header">
 
@@ -28,8 +29,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/home') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="nav-logo" href="{{ url('/home') }}">
+                        <img class="logo" src="{{ asset('img/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}">
                     </a>
                 </div>
 
@@ -61,8 +62,23 @@
 
         @yield('content')
     </div>
+    <style>
+    .nav-logo {
+        display: block;
+        padding: 10px 15px;
+    }
+    .logo {
+        height: 30px;
+    }
+    .ldbc-nav {
+        background-color: transparent;
+        border-color: #370096;
+    }
+    </style>
+    @yield('inline-style')
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('script')
 </body>
 </html>
