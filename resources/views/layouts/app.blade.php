@@ -63,6 +63,10 @@
         @yield('content')
     </div>
     <style>
+body {
+    color: #fff;
+    background: linear-gradient(0, #28314c, #3e496c);
+}
     .logo {
         height: 30px;
     }
