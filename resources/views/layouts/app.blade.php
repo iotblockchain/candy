@@ -29,8 +29,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="nav-logo" href="{{ url('/home') }}">
-                        <img class="logo" src="{{ asset('img/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
 
@@ -63,16 +63,21 @@
         @yield('content')
     </div>
     <style>
-    .nav-logo {
-        display: block;
-        padding: 10px 15px;
-    }
     .logo {
         height: 30px;
     }
     .ldbc-nav {
         background-color: transparent;
-        border-color: #370096;
+        border-bottom-color: #697597;
+    }
+    .navbar-default .navbar-brand {
+        color: #55b3e2;
+    }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border-color: #8196b5;
+    }
+    .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+        color: #8196b5;
     }
     </style>
     @yield('inline-style')

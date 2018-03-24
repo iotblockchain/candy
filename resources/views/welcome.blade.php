@@ -10,7 +10,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #001296;
+                color: #333;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -22,6 +22,7 @@
                 background: linear-gradient(127deg, #7630c9, #9441a1);
                 background: linear-gradient(127deg, #9441a1, #ec798b); */
                 background: linear-gradient(50deg, #5400E6, #C200E4);
+                background: linear-gradient(40deg, #947fee,#fa74b1);
             }
 
             .full-height {
@@ -40,8 +41,8 @@
 
             .top-right {
                 position: absolute;
-                right: 10px;
-                top: 18px;
+                right: 0;
+                top: 0;
             }
 
             .content {
@@ -53,8 +54,9 @@
             }
 
             .links > a {
+                display: block;
                 color: rgba(255,255,255,0.8);
-                padding: 0 25px;
+                padding: 20px 25px;
                 font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
