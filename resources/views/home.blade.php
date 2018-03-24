@@ -6,7 +6,8 @@
         <div class="panel">
             <div class="panel-body">
                 <div>推广链接</div>
-                <input onfocus="this.select()" type="url" value="{{ $url }}" style="width:100%;">
+                <input readonly value="{{ $url }}" style="width:100%;">
+                <a href="{{ $qr_url }}" style="display:inline-block; margin-top: 4px; padding: 4px 0;">点击获取推广图片</a>
             </div>
         </div>
     </div>
