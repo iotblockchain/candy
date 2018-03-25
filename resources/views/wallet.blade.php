@@ -9,6 +9,7 @@
                 <div class="panel-body">
                     <input class="text-center" onfocus="this.select()" readonly value="0x{{ Auth::user()->address }}" style="width:100%;">
                 </div>
+                <a href="https://w.ldbc.io">点击跳转到网页钱包</a>
             </div>
             <div class="text-center">绑定钱包</div>
             <form method="POST" class="navbar-form wallet-bind" role="search">
