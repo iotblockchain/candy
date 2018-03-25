@@ -36,10 +36,6 @@
 html,body {
     height: 100%;
 }
-body {
-    color: #fff;
-    background: linear-gradient(0, #28314c, #3e496c);
-}
 .wallet-addr {
     padding: 15px 10px;
     background: linear-gradient(to right, #343f62, #586487 70%),
