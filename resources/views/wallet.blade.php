@@ -4,10 +4,10 @@
 <div class="container wallet">
     <div class="row" style="font-family:monospace;">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel wallet-addr">
+            <div class="panel wallet-addr text-center">
                 <div class="panel-heading">钱包地址</div>
                 <div class="panel-body">
-                    <input onfocus="this.select()" readonly value="0x{{ Auth::user()->address }}" style="width:100%;">
+                    <input class="text-center" onfocus="this.select()" readonly value="0x{{ Auth::user()->address }}" style="width:100%;">
                 </div>
             </div>
             <div class="text-center">绑定钱包</div>
@@ -41,8 +41,11 @@ body {
     background: linear-gradient(0, #28314c, #3e496c);
 }
 .wallet-addr {
+    padding: 15px 10px;
     background: linear-gradient(to right, #343f62, #586487 70%),
                 linear-gradient(to top, #4e5a7e, #384263 70%);
+    background: linear-gradient(355deg, #505d82, rgba(63, 73, 105, .6) 40%, rgba(73, 85, 120, .75)), 
+                linear-gradient(92deg, rgba(52, 62, 97, .8), #596587);
     border: 0;
 }
 .wallet-addr input {

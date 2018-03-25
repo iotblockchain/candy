@@ -3,10 +3,10 @@
 @section('content')
 <div class="home">
     <div class="home-attent">
-        <div class="panel">
+        <div class="panel text-center">
             <div class="panel-heading">推广链接</div>
             <div class="panel-body">
-                <input onfocus="this.select()" type="url" value="{{ $url }}" style="width:100%;">
+                <input class="text-center" onfocus="this.select()" type="url" value="{{ $url }}" style="width:100%;">
                 <a href="{{ $qr_url }}" style="display:inline-block; margin-top: 4px; padding: 4px 0;">点击获取推广图片</a>
             </div>
         </div>
@@ -109,8 +109,11 @@ body {
     padding: 0 12px;
 }
 .home-attent .panel {
+    padding: 10px;
     background: linear-gradient(to right, #343f62, #586487 70%),
                 linear-gradient(to top, #4e5a7e, #384263 70%);
+    background: linear-gradient(355deg, #505d82, rgba(63, 73, 105, .6) 40%, rgba(73, 85, 120, .75)), 
+                linear-gradient(92deg, rgba(52, 62, 97, .8), #596587);
     border-radius: 4px;
     border: 0;
 }

@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top ldbc-nav">
+        <nav class="navbar navbar-static-top ldbc-nav">
             <div class="container">
                 <div class="navbar-header">
 
@@ -70,13 +70,16 @@
         background-color: transparent;
         border-bottom-color: #697597;
     }
-    .navbar-default .navbar-brand {
+    .ldbc-nav .navbar-brand {
         color: #55b3e2;
     }
-    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    .ldbc-nav .navbar-toggle {
         border-color: #8196b5;
     }
-    .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+    .ldbc-nav .icon-bar {
+        background-color: #697597
+    }
+    .ldbc-nav .navbar-nav>li>a, .ldbc-nav .navbar-text {
         color: #8196b5;
     }
     </style>
