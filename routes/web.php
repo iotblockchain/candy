@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('candy')->group(function () {
+# Route::prefix('candy')->group(function () {
 
 Auth::routes();
 
@@ -22,4 +22,4 @@ Route::get('/wallet', 'WalletController@index')->name('wallet');
 Route::post('/wallet', 'WalletController@updateAddress');
 Route::get('/qr', 'MyQRCodeController@myqr')->name('qr');
 
-});
+# });
