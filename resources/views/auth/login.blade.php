@@ -23,7 +23,7 @@
 
                 <div class="form-group">
                     <div class="col-md-12">
-                        <img id="captcha" style="float:right;" src="/captcha">
+                        <img id="captcha" style="float:right;" src="{{route('captcha')}}">
                         <input id="captcha-phrase" style="width: calc(100% - 110px);" type="number" class="form-control" placeholder="图形验证码">
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                 </div>
 
                 <input type="hidden" name="remember" value="1">
-                
+
                 <div class="form-group">
                     <div class="col-md-12">
                         <button class="btn btn-block login-submit" id="submit">登录</button>
@@ -137,7 +137,7 @@
             allowDropdown: true, // 实际没有筛选后的选择，暂时把下拉框隐藏
             initialCountry: 'cn'
         });
-        
+
         $('#submit').on('click', function (e) {
             var error = verify();
             if (error) {
@@ -149,7 +149,7 @@
         })
         var i = document.getElementById('captcha');
         i.addEventListener('click', function (e) {
-            e.target.src = "/captcha?_=" + new Date().getTime();
+            e.target.src = "{{route('captcha')}}?_=" + new Date().getTime();
         })
 
         var a = document.getElementById('send-sms-code');
@@ -178,7 +178,7 @@
             }
 
             var r = new XMLHttpRequest();
-            var sms_url = "/sms-code?phone="+phone.value+"&captcha="+captcha.value;
+            var sms_url = "{{route('sms')}}?phone="+phone.value+"&captcha="+captcha.value;
 
             var u = new URL(document.URL).searchParams.get('u');
             if (u) {

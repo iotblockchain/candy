@@ -11,20 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::prefix('candy')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/captcha', 'CaptchaController@get');
-
-Route::get('/sms-code', 'SmsCodeController@send');
-
-Auth::routes();
-
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/captcha', 'CaptchaController@get')->name('captcha');
+Route::get('/sms-code', 'SmsCodeController@send')->name('sms');
 Route::get('/wallet', 'WalletController@index')->name('wallet');
 Route::post('/wallet', 'WalletController@updateAddress');
-Route::get('/qr', 'MyQRCodeController@myqr');
+Route::get('/qr', 'MyQRCodeController@myqr')->name('qr');
+
+});

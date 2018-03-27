@@ -27,8 +27,8 @@ class HomeController extends Controller
         $user = auth()->user();
 
         return view('home', [
-            'url' => url('/login?u=').$user->id,
-            'qr_url' => url('/qr'),
+            'url' => route('login').'?u='.$user->id,
+            'qr_url' => route('qr'),
             'invite_count' => $user->invitee->count(),
             'level' => $user->vip,
             'bonus' => $user->bonus,

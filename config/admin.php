@@ -22,7 +22,7 @@ return [
      */
     'route' => [
 
-        'prefix' => 'admin',
+        'prefix' => 'candy/admin',
 
         'namespace' => 'App\\Admin\\Controllers',
 
