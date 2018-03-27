@@ -4,10 +4,20 @@
 <div class="home">
     <div class="home-attent">
         <div class="panel text-center">
-            <div class="panel-heading">推广链接</div>
+            <div class="panel-heading">推广邀请</div>
             <div class="panel-body">
-                <input class="text-center" onfocus="this.select()" type="url" value="{{ $url }}" style="width:100%;">
+                <!--<input class="text-center" onfocus="this.select()" type="url" value="{{ $url }}" style="width:100%;">-->
+                <p id="txt" style="text-align:left">
+物数链（LDBC）<br>
+联合国内外著名物流企业研发，望月新一站台，区块链中的菜鸟网络，2018最具潜力的区块链领域糖果派送中。<br>
+🏃注册即送，邀请便有，价值1000万现金等你来分。<br>
+最高每邀请一个人可获得777个LDBC（价值$40）<br>
+🏃注册网址：{{$url}}<br>
+🏃官方网址：https://ldbc.io/<br>
+🏃电报群：https://t.me/LDBC001<br>
+                </p>
                 <a href="{{ $qr_url }}" style="display:inline-block; margin-top: 4px; padding: 4px 0;">点击获取推广图片</a>
+                <a id="cp" href="#" style="display:inline-block; margin-top: 4px; padding: 4px 0;">点击复制推广文字</a>
             </div>
         </div>
     </div>
@@ -27,6 +37,7 @@
                     <h2>已发LDBC</h2>
                     <span><i>{{$sent_bonus}}</i>枚</span>
                 </div>
+                <h2>在活动完后将统一发放到钱包<br>一定要绑定自己的钱包地址</h2>
             </div>
         </div>
     </div>
@@ -178,4 +189,22 @@ body {
     color: #f277b7;
 }
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById("cp");
+
+        btn.addEventListener("click", clickHandler, false);
+
+        function clickHandler(e) {
+            e.preventDefault();
+            document.execCommand('copy');
+        }
+
+        document.addEventListener('copy', function(e) {
+            var txt = document.getElementById('txt');
+            e.clipboardData.setData("text/plain", txt.innerText);
+            e.preventDefault();
+        });
+    });
+</script>
 @endsection
