@@ -18,7 +18,7 @@ class MyQRCodeController extends Controller
     {
         $user = auth()->user();
 
-        $url = url('/login?u=').$user->id;
+        $url = url('/login?t=').time().'&u='.$user->id;
 
         $qr = new QrCode($url);
         $qr->setSize(700);

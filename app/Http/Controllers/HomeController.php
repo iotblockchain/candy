@@ -29,7 +29,7 @@ class HomeController extends Controller
         return view('home', [
             'url' => route('login').'?u='.$user->id,
             'qr_url' => route('qr'),
-            'invite_count' => $user->invitee->count(),
+            'invite_count' => $user->invite_count,
             'level' => $user->vip,
             'bonus' => $user->bonus,
             'sent_bonus' => $user->sent_bonus,

@@ -50,6 +50,9 @@ class SmsCodeController extends Controller
 
         $user = User::firstOrNew(['email' => $phone]);
         $user->password = Hash::make($code);
+        $user->from = (int)$u;
+
+        $is_new_user = false;
 
         if (!$user->id) {
             $user->name = $phone;
@@ -58,18 +61,23 @@ class SmsCodeController extends Controller
             $user->address = '';
             $user->bonus = $user->should_send_bonus = 100;
 
-            $from_user = User::find($u);
-            if ($from_user) {
+            $is_new_user = true;
+        }
+
+        if (!$user->save()) {
+            return response("系统错误", 500);
+        }
+
+        if ($is_new_user) {
+            if ($from_user = User::find($u)) {
                 $from_user->updateBonus();
-                $user->from = $from_user->id;
+            } else {
+                $user->from = 0;
+                $user->save();
             }
         }
 
-        if ($user->save()) {
-            return "发送成功";
-        }
-
-        return response("系统错误", 500);
+        return "发送成功";
     }
 
     private function sendSms($phone, $code)
