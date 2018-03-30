@@ -140,6 +140,9 @@ body {
     background-color: transparent;
     border: 0;
 }
+.home-attent .col-xs-6 {
+    padding: 0;
+}
 .home .level-box,
 .home .level-rule {
     background-color: transparent;
