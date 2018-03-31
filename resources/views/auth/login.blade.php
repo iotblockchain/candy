@@ -197,7 +197,7 @@
                     loginAlert.text(r.responseText);
                 } else {
                     loginAlert.text('');
-                    var old_text = a.text;
+                    var old_text = a.innerText;
                     var i = 60;
                     a.innnerText = i + "s 后重新获取";
                     a.disabled = true;
