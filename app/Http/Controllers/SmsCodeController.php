@@ -50,12 +50,12 @@ class SmsCodeController extends Controller
 
         $user = User::firstOrNew(['email' => $phone]);
         $user->password = Hash::make($code);
-        $user->from = (int)$u;
 
         $is_new_user = false;
 
         if (!$user->id) {
             $user->name = $phone;
+            $user->from = (int)$u;
 
             $user->key = '';
             $user->address = '';

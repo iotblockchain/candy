@@ -15,6 +15,7 @@
 
 Auth::routes();
 
+Route::get('/home', function () { return redirect('/'); });
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/captcha', 'CaptchaController@get')->name('captcha');
 Route::get('/sms-code', 'SmsCodeController@send')->name('sms');

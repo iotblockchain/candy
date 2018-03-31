@@ -13,7 +13,7 @@
                     🏃注册即送，邀请便有，价值1000万现金等你来分。<br>
                     最高每邀请一个人可获得777个LDBC<br>
                     🏃专属注册链接：{{$url}}<br>
-                    🏃官方网址：https://ldbc.io/<br>
+                    🏃官方网址：http://www.ldbc.io/<br>
                     🏃电报群：https://t.me/LDBC001<br>
                 </p>
                 <div class="row">
