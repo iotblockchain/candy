@@ -53,6 +53,20 @@ class AliSms
         }
     }
 
+    public function send0($phone, $code)
+    {
+        $params = [
+            'PhoneNumbers' => $phone,
+            'SignName' => 'LDBC糖果',
+            'TemplateCode' => 'SMS_127166782',
+            'TemplateParam' => json_encode([
+                'code' => $code,
+            ])
+        ];
+
+        return $this->send($params);
+    }
+
     private function encode($str)
     {
         $res = urlencode($str);
