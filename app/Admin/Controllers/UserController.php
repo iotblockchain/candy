@@ -75,6 +75,7 @@ class UserController extends Controller
         $grid = Admin::grid(User::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
+            $grid->email('手机');
             $grid->address('钱包地址')->display(function ($address) {
                 return "<code>0x".$address."</code>";
             });
