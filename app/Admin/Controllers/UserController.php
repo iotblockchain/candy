@@ -79,13 +79,13 @@ class UserController extends Controller
                 return "<code>0x".$address."</code>";
             });
 
-            $grid->invitee('邀请用户')->display(function ($users) {
-                $lines = array_map(function ($user) {
-                    return '<option>'.$user['email'].'</option>';
-                }, $users);
-
-                return '<select>'.join("\n", $lines).'</select> 共 '.count($users).' 个';
-            });
+            # $grid->invitee('邀请用户')->display(function ($users) {
+            #     $lines = array_map(function ($user) {
+            #         return '<option>'.$user['email'].'</option>';
+            #     }, $users);
+            #
+            #     return '<select>'.join("\n", $lines).'</select> 共 '.count($users).' 个';
+            # });
 
             $grid->invite_count('邀请数量')->sortable();
             $grid->vip('用户等级')->sortable();
