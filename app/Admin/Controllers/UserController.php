@@ -87,6 +87,7 @@ class UserController extends Controller
                 return '<select>'.join("\n", $lines).'</select> 共 '.count($users).' 个';
             });
 
+            $grid->invite_count('邀请数量')->sortable();
             $grid->vip('用户等级')->sortable();
             $grid->bonus('总奖励');
             $grid->sent_bonus('已发奖励');
@@ -112,7 +113,6 @@ class UserController extends Controller
 
             $filter->equal('email', '手机号')->placeholder('手机号');
         });
-
 
         return $grid;
     }
