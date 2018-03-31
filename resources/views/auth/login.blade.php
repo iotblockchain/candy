@@ -179,10 +179,16 @@
 
             var r = new XMLHttpRequest();
             var sms_url = "{{route('sms')}}?phone="+phone.value+"&captcha="+captcha.value;
-
-            var u = new URL(document.URL).searchParams.get('u');
-            if (u) {
-                sms_url += '&u=' + u;
+            var url_search = location.search;
+            if (url_search.indexOf('?') > -1) {
+                var str = url_search.substr(1);
+                var query_arr = str.split('&');
+                for(var i = 0; i < query_arr.length; i++) {
+                    if (query_arr[i].split('=')[0] === 'u') {
+                        sms_url += '&' + query_arr[i];
+                        break;
+                    }
+                }
             }
 
             r.open("GET", sms_url);
