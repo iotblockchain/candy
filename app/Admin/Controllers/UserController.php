@@ -113,6 +113,7 @@ class UserController extends Controller
             $filter->disableIdFilter();
 
             $filter->equal('email', '手机号')->placeholder('手机号');
+            $filter->equal('from', '邀请人')->placeholder('邀请人 ID');
             $filter->gt('invite_count', '邀请人数超过')->placeholder('人数');
         });
 
