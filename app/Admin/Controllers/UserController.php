@@ -80,15 +80,9 @@ class UserController extends Controller
                 return "<code>0x".$address."</code>";
             });
 
-            # $grid->invitee('邀请用户')->display(function ($users) {
-            #     $lines = array_map(function ($user) {
-            #         return '<option>'.$user['email'].'</option>';
-            #     }, $users);
-            #
-            #     return '<select>'.join("\n", $lines).'</select> 共 '.count($users).' 个';
-            # });
-
-            $grid->invite_count('邀请数量')->sortable();
+            $grid->invite_count('邀请数量')->sortable()->display(function ($count) {
+                return "<a href='/admin/users?from={$this->id}'>$count</a>";
+            });
             $grid->vip('用户等级')->sortable();
             $grid->bonus('总奖励');
             $grid->sent_bonus('已发奖励');
